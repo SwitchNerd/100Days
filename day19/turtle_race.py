@@ -13,7 +13,7 @@ for i in range(6):
     variables[i] = Turtle('turtle')
     variables[i].penup()
     variables[i].goto(-240 ,-100+ (i*35))
-    variables[i].color(colors[i])
+    variables[i].color(colors[i])   
 
 if choice != '':
     race = True
