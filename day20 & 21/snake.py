@@ -24,12 +24,21 @@ for i in range(1,4):
     snake.shape('square')
     xcor = snake.xcor()
     snake.goto(xcor - (i*20),0)
+  
     snake_body.append(snake)
+
 scren.update()
+#snake_body[0].forward(20)
+#scren.update()|
 
-while not scren.exitonclick():
 
-    for snaker in snake_body:
-        snake.forward(20)
+while True:
+    
+    for snakes in snake_body:
+        #snakes.forward(70)]
+        print(snakes.position())
+        snakes.goto(0,0)
         scren.update()
 
+    
+    scren.exitonclick()
