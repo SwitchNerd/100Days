@@ -4,6 +4,16 @@ class Snake:
     def __init__(self):
         self.segments = []
         self.initalise_segments()
+    
+    def increase_size(self):
+        position = len(self.segments) - 1
+        x,y = self.segments[position].pos()
+        new_seg = Turtle('square')
+        new_seg.color('white')
+        new_seg.penup()
+        new_seg.goto(x,y)
+        self.segments.append(new_seg)
+        
         
     def initalise_segments(self):
         for position in starting_positions:
