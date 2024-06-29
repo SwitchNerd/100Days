@@ -29,3 +29,4 @@ class Paddle(Turtle):
          
          if self.ycor() >= 290:
              self.south()
+    

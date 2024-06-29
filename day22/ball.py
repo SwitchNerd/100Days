@@ -7,8 +7,22 @@ class PingPong(Turtle):
         self.shape('circle')
         self.color('white')
         self.penup()
-        self.move_speed = random.choice([-20,20])
-        self.setheading(random.randint(0,90))
+        self.xcordinate_increase = 15
+        self.ycordinate_increase=15
+        self.timespeed = 0.1
     
     def move(self):
-        self.forward(self.move_speed)
+        self.goto(self.xcor() + self.xcordinate_increase , self.ycor() + self.ycordinate_increase)
+        
+    
+    def collision_with_top(self):
+        if self.ycor() >= 290:
+            self.ycordinate_increase *= -1
+            
+    
+    def collision_with_botom(self):
+        if self.ycor() <= -290: 
+            self.ycordinate_increase *= -1
+    
+    def reduce_time(self):
+        self.timespeed *= 0.9
