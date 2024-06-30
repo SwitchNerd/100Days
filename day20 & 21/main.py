@@ -38,15 +38,14 @@ while game_is_on:
     if snake.segments[0].xcor() > 280 or snake.segments[0].xcor() < -280 or snake.segments[0].ycor() > 280 or snake.segments[0].ycor() < -280:
         score.gameover()
         screen.update()
-        time.sleep(3)
         game_is_on = False
     
     #detect collision with tail
     leng = len(snake.segments)
-    print(snake.segments[1:2])
-    if snake.segments[0].distance(snake.segments[1:3]) <10:
-        score.gameover() 
-        screen.update()
-        time.sleep(3)
-        game_is_on = False
-            
+    for snaked in snake.segments[1:leng]:
+        if snake.segments[0].distance(snaked) <10:
+            score.gameover() 
+            screen.update()
+            game_is_on = False
+
+screen.exitonclick()
