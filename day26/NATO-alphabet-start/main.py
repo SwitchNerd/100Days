@@ -17,11 +17,17 @@ for (index, row) in student_data_frame.iterrows():
     #Access row.student or row.score
     pass
 
+nato_alphabet_dataframe = pandas.read_csv('day26/NATO-alphabet-start/nato_phonetic_alphabet.csv')
 # Keyword Method with iterrows()
 # {new_key:new_value for (index, row) in df.iterrows()}
+nato_alphabet = {row.letter:row.code for (index,row) in nato_alphabet_dataframe.iterrows()}
+
 
 #TODO 1. Create a dictionary in this format:
 {"A": "Alfa", "B": "Bravo"}
 
 #TODO 2. Create a list of the phonetic code words from a word that the user inputs.
 
+word = input('Enter a letter to be translated: ').upper()
+nato_alphabet_list = [value for letter in word for (key,value) in nato_alphabet.items() if key == letter]
+print(nato_alphabet_list)
